@@ -24,6 +24,11 @@
     <%= f.datetime_select :released_at, start_year: 1918, discard_hour: true, discard_seconds: true, class:"form-control" %>
   </div>
   <div class="actions form-group">
-    <%= f.submit 'Create new movie', :class => 'btn btn-primary'  %>
+    <% if @movie.new_record? %>
+      <%= f.submit 'Create a new movie record', :class => 'btn btn-primary'  %>
+    <% else %>
+      <%= f.submit 'Update movie', :class => 'btn btn-warning'  %>
+    <% end %>
+
   </div>
 <% end %>
