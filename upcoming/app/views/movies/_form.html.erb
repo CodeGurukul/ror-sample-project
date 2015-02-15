@@ -11,19 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class:"form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :plot %><br>
-    <%= f.text_area :plot %>
+    <%= f.text_area :plot, class:"form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :released_at %><br>
-    <%= f.datetime_select :released_at %>
+    <%= f.datetime_select :released_at, start_year: 1918, discard_hour: true, discard_seconds: true, class:"form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions form-group">
+    <%= f.submit 'Create new movie', :class => 'btn btn-primary'  %>
   </div>
 <% end %>
